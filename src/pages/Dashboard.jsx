@@ -16,15 +16,16 @@ import { calculateDate, revenueData, subscriptionData } from "../assets/data";
 const Dashboard = () => {
   const [startDate, setStartDate] = useState(calculateDate(6));
   const [endDate, setEndDate] = useState(calculateDate(0));
-  const [filteredSubscriptionData, setFilteredSubscriptionData] =
-    useState(subscriptionData);
+  const [filteredSubscriptionData, setFilteredSubscriptionData] = useState(
+    subscriptionData.slice(0, 6).reverse()
+  );
 
   const handleFilter = () => {
     const filteredData = subscriptionData.filter((item) => {
       const itemDate = new Date(item.date);
       return itemDate >= new Date(startDate) && itemDate <= new Date(endDate);
     });
-    setFilteredSubscriptionData(filteredData);
+    setFilteredSubscriptionData(filteredData.reverse());
   };
 
   return (
