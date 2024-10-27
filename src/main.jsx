@@ -1,8 +1,7 @@
-import { StrictMode } from "react";
+import "@shopify/polaris/build/esm/styles.css";
 import { createRoot } from "react-dom/client";
-import { AppProvider } from "@shopify/polaris";
-import "./index.css";
 import App from "./App.jsx";
+import "./index.css";
 
 createRoot(document.getElementById("root")).render(
   // <StrictMode>
